@@ -1,0 +1,51 @@
+<div class="container">
+  <p class="maintitle">SIGNUP PAGE </p>
+<div class="card mt-5">
+
+  <div class="card-info">
+    <p class="title">Enter Your Details</p>
+    <form class="form" [formGroup]="signupForm" (ngSubmit)="sendSignUpData()">
+    <input placeholder="Your Name" class="input"  type="text" formControlName="name" >
+    <code class="code" *ngIf="name?.invalid && (name?.dirty || name?.touched)" >
+    <code *ngIf="name?.errors?.['required']">
+    Name is required.
+   </code>
+  <code  *ngIf="name?.errors?.['minlength']">
+    Name must be at least 3 characters long.
+  </code>
+    </code>
+
+    <input placeholder="Your email" class="input"  type="email" formControlName="email" >
+    <code class="code" *ngIf="email?.invalid && (email?.dirty || email?.touched)" >
+      <code *ngIf="email?.errors?.['required']">
+      Email is required.
+     </code>
+    <code *ngIf="email?.errors?.['pattern']">
+      Email should be in eamil@eamil.com format
+    </code>
+      </code>
+    <input placeholder="Your Phone Number " class="input"  type="tel" formControlName="phoneNo" >
+    <code class="code" *ngIf="phoneNo?.invalid && (phoneNo?.dirty || phoneNo?.touched)" >
+      <code *ngIf="phoneNo?.errors?.['required']">
+      Phone Number is required.
+     </code>
+    <code *ngIf="phoneNo?.errors?.['pattern']">
+      Phone Number must be in [9-8-7] [0-9].
+    </code>
+      </code>
+    <input placeholder="Enter Password" class="input"  type="text" formControlName="password" >
+    <code class="code" *ngIf="password?.invalid && (password?.dirty || password?.touched)" >
+      <code *ngIf="password?.errors?.['required']">
+      Password is required.
+     </code>
+    <code *ngIf="password?.errors?.['pattern']">
+      Password must be 1 Uppercase ,1 Lowercase, 1 numeric , 1 @!#@$%*& .
+    </code>
+      </code>
+    <button type="submit" [disabled]="signupForm.invalid" class="btn" href="#">Sign Up</button>
+  </form>
+  <code routerLink="../login">Already a User LOGIN</code>
+
+  </div>
+</div>
+</div>

@@ -1,0 +1,125 @@
+.card {
+  width: 320px;
+  height: auto;
+  background: white;
+  padding: .4em;
+  border-radius: 6px;
+  margin: 1rem;
+}
+
+.card-image {
+  background-color: rgb(236, 236, 236);
+  width: 100%;
+  height: 10rem;
+  border-radius: 6px 6px 0 0;
+}
+
+.card-image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.card-image:hover {
+  transform: scale(0.98);
+}
+
+.category {
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: rgb(63, 121, 230);
+  padding: 10px 7px 0;
+}
+
+.category:hover {
+  cursor: pointer;
+}
+
+.heading {
+  font-weight: 600;
+  color: rgb(88, 87, 87);
+  padding: 7px;
+}
+
+.heading:hover {
+  cursor: pointer;
+}
+
+.author {
+  color: gray;
+  font-weight: 400;
+  font-size: 11px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: last baseline;
+
+}
+
+.name {
+  font-weight: 600;
+  padding: 0px 5px;
+}
+
+.name:hover {
+  cursor: pointer;
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.etc{
+  display: flex;
+  flex: 1 1 auto;
+}
+.example-icon{
+  display: inline;
+  color: black;
+}
+
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 1em 0 1em 0;
+  max-width: 190px;
+  position: relative;
+  /* border: 2px solid black; */
+}
+
+.inputGroup input {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(103, 103, 103);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+  transform: translateY(-50%) scale(.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #ffffff;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  border-color: rgb(150, 150, 200);
+}
+
+
+.backpage{
+  display:none;
+}

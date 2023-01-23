@@ -1,0 +1,32 @@
+<div class="container mt-3">
+<div class="card" *ngFor="let blog of arr;let i =index" id="card{{i}}" >
+  <div class="card-image">
+    <img src="{{blog.imageUrl}}" alt="">
+  </div>
+  <div class="category"> {{blog.title}}
+
+  </div>
+
+  <div class="heading">
+    {{blog.content}}
+      <div class="author"> By <span class="name">{{blog.email}}</span> 4 days ago<span class="etc"></span><button mat-icon-button (click)="oneditclick(i,blog)" class="example-icon"   aria-label="Example icon-button with share icon">
+        <mat-icon >edit</mat-icon>
+      </button><button mat-icon-button *ngIf="true" class="example-icon" (click)="delete(blog)"  aria-label="Example icon-button with share icon">
+        <mat-icon >delete</mat-icon>
+      </button></div>
+  </div>
+  <div class="backpage" id="backpage{{i}}" >
+    <div class="inputGroup">
+
+      <form  [formGroup]="updateForm" (ngSubmit)="edit(blog.title)">
+      <input type="text" required="" name="content"  value={{editBlog.content}} formControlName="content" autocomplete="off">
+      <label for="title">Content</label>
+      <input type="text"  required="" name=""  value={{editBlog.imageUrl}} formControlName="imageUrl" autocomplete="off">
+      <label for="content">Image Url</label>
+      <button mat-icon-button  class="example-icon" type="submit" a-label="Example icon-button with share icon">
+        <mat-icon >check_circle</mat-icon>
+      </button></form>
+  </div>
+  </div>
+</div>
+</div>

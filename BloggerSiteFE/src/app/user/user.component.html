@@ -1,0 +1,18 @@
+
+<div class="container">
+  <p class="maintitle">Add Your Blogs</p>
+<div class="card mt-5">
+
+  <div class="card-info">
+    <p class="title">Enter Blog Details Here</p>
+    <form class="form" [formGroup]="signupForm" (ngSubmit)="sendBlogData()">
+    <input placeholder="Blog title" class="input"  type="text" formControlName="title" required>
+    <input placeholder="Blog Content" class="input"  type="text" formControlName="content" required>
+    <input placeholder="Image URL" class="input"  type="text" formControlName="imageUrl"  required>
+    <button type="submit" class="btn" href="#">Add Blog</button>
+  </form>
+  <!-- <code routerLink="../login">Already a User LOGIN</code> -->
+
+  </div>
+</div>
+</div>

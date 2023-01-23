@@ -1,0 +1,33 @@
+<div class="container mt-3">
+  <div class="card" *ngFor="let blog of bigArr;let i = index">
+    <div class="card-image">
+      <img src="{{blog.imageUrl}}" alt="">
+    </div>
+    <div class="category"> {{blog.title}}
+
+    </div>
+
+    <div class="heading">
+      {{blog.content}}
+        <div class="author"> By <span class="name">{{blog.email}}</span> 4 days ago<span class="etc"></span><button mat-icon-button (click)="oneditclick(i)" class="example-icon"   aria-label="Example icon-button with share icon">
+          <mat-icon >
+            maps_ugc
+          </mat-icon>
+        </button></div>
+        <div class="category">Comments</div>
+        <div class="com">
+          <code *ngFor="let com of blog.commentList">{{com}}</code>
+        </div>
+
+    </div>
+    <div class="backpage" id="backpage{{i}}" >
+      <div class="inputGroup">
+        <input type="text" required="" [(ngModel)]="comment"  autocomplete="off">
+        <label for="title">Comment</label>
+        <button mat-icon-button  class="example-icon" (click)="sendComment(blog)" a-label="Example icon-button with share icon">
+          <mat-icon >check_circle</mat-icon>
+        </button>
+    </div>
+    </div>
+  </div>
+  </div>
